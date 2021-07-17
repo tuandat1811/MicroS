@@ -1,22 +1,34 @@
 const express = require('express')
-const app = express()
-const shortURL= require('./models/shortURL')
 const mongoose = require('mongoose')
-//avoid deprecation warning
-mongoose.connect('mongodb://localhost/sinnoURL', {
-    useNewUrlParser: true, useUnifiedTopology: true,
+const ShortUrl = require('./models/shortUrl')
+const app = express()
+
+mongoose.connect('mongodb://localhost/urlShortener', {
+  useNewUrlParser: true, useUnifiedTopology: true
 })
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended:false}))
+app.use(express.urlencoded({ extended: false }))
 
-app.get('/', async (req , res) => {
-    const shortURLs = await shortURL.find()
-    res.render('index', {shortURLs:shortURLs})
+app.get('/', async (req, res) => {
+  const shortUrls = await ShortUrl.find()
+  res.render('index', { shortUrls: shortUrls })
 })
 
-app.post('/shortURLs', async(req , res) => {
-    await shortURL.create({ full: req.body.fullURL}) //wait before creating shortURL finished to move on 
-    res.redirect('/')
+app.post('/shortUrls', async (req, res) => {
+  await ShortUrl.create({ full: req.body.fullUrl })
+
+  res.redirect('/')
 })
+
+app.get('/:shortUrl', async (req, res) => {
+  const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl })
+  if (shortUrl == null) return res.sendStatus(404)
+
+  shortUrl.clicks++
+  shortUrl.save()
+
+  res.redirect(shortUrl.full)
+})
+
 app.listen(process.env.PORT || 5000);

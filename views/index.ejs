@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>SINNO Shrinker - Shorten URL By SINNO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>SINNO URL Shrinker - Designed by SINNO</title>
 </head>
 <body>
-    <div class="container">
+  <div class="container">
     <h1>SINNO URL Shrinker</h1>
-    <form action="/shortURLs" method="POST" class="my-4 form-inline">
-        <label for="fullURL" class="sr-only">URL</label>
-        <input required placeholder="Insert your URL!" type="url" name="fullURL" id="fullURL" class="form-control col mr-2"> 
-        <button type="submit" class="btn btn-success">Shrink It!</button>
-        
+    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+      <label for="fullUrl" class="sr-only">Url</label>
+      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      <button class="btn btn-success" type="submit">Shrink It!</button>
     </form>
+    
     <table class="table table-striped table-responsive">
-        <thead>
-            <tr>
-                <th>Full URL</th>
-                <th>Short URL</th>
-                <th>Clicks</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% shortURLs.forEach(shortURL => { %>
-                <tr>
-                    <td><a href="<%= shortURLs.full %>"><%=shortURLs.full %></a></td>
-                    <td><a href="<%= shortURLs.short %>"><%= shortURLs.short %></a></td>
-                    <td><%= shortURLs.clicks %> </td>
-                </tr>
-            <%}) %> 
-        </tbody>
+      <thead>
+        <tr>
+          <th>Full URL</th>
+          <th>Short URL</th>
+          <th>Clicks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% shortUrls.forEach(shortUrl => { %>
+          <tr>
+            <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+            <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+            <td><%= shortUrl.clicks %></td>
+          </tr>
+        <% }) %>
+      </tbody>
     </table>
-</div>
+  </div>
 </body>
 </html>
