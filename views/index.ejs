@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="./css/style.css" type="text/css">
+  <!-- Include css files-->
+  <link rel="stylesheet" href="/assets/styles.css" type="text/css">
+  <link rel="icon" href="/assets/SINNO.png" type="image/png" sizes="16x16">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title> SINNO URL Shrinker - Designed by SINNO</title>
+  <title> Shrinker | SINNO </title>
   <!-- start function copy to clipboard -->
   <!-- <script>
     function copylink() {
@@ -29,13 +31,32 @@
 }
   </script> -->
 
-</head>
+</head> 
 <body>
+  <!-- Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://sinno.soict.ai"><img src="/assets/SINNO.png" alt="SINNO" width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main part-->
   <div class="container">
-    <h1>SINNO URL Shrinker</h1>
     <form action="/shortUrls" method="POST" class="my-4 form-inline">
       <label for="fullUrl" class="sr-only">Insert your URL</label>
-      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      <input required placeholder="Insert your URL" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
       <button class="btn btn-success" type="submit">Shrink It!</button>
     </form>
     
@@ -61,4 +82,43 @@
     </table>
   </div>
 </body>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Homepage -->
+      <a class="btn btn-outline-light btn-floating m-1" href="http://sinno.soict.ai" role="button">
+        <i class="fas fa-home"></i></a>
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SINNOclub" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/SOICTInnovationClub" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Brought to you by SoICT Innovation Club, Hanoi University of Science and Technology.
+        <br>
+        Author: Hoang Dang Tuan Dat
+      </p>
+    </section>
+    <!-- Section: Text -->
+  </div>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright: 
+    <a class="text-white" href="https://sinno.soict.ai">SoICT Innovation Club</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </html>

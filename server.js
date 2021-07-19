@@ -6,8 +6,9 @@ const app = express()
 mongoose.connect('mongodb://localhost/urlShortener', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
-// app.use(express.static(./view/css/style.css))
-// app.use('/views', express.static('views'));
+//include css in ejs
+app.use('/assets', express.static('assets'));
+
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
