@@ -3,5 +3,19 @@
     position: 0px 10px 0px 0px;
     border: none;
     float: auto;
-    left: 10px;
+    margin-left: 7.5px;
+}
+#showcase{
+    min-height:400px;
+    background:url('../assets/showcase.jpg') no-repeat 0 -400px;
+    color:#ffffff;
+}
+#showcase h1{
+    margin:0 50rem 0 0;
+    padding: 10rem 0 0 10rem;
+    font-size:55px;
+}
+#showcase p{
+    font-size:30px;
+    padding: 0 0 0 10rem;
 }

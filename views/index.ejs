@@ -14,6 +14,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title> MicroS | SINNO </title>
   <!-- start function copy to clipboard -->
+  <script>
+
+  </script>
+  <!-- end function copy to clipboard-->
   <!-- start function clear cache-->
   <script>
     function clearcache(){
@@ -48,36 +52,48 @@
       </ul>
   </div>
   </nav>
+  <!-- Section showcase-->
+  <section id="showcase">
+    <div class="showcase-container">
+      <h1>MicroS</h1>
+      <p>Link ngắn, liên kết dài!</p>
 
-  <!-- Main part-->
-  <div class="container">
-    <form action="/shortUrls" method="POST" class="my-4 form-inline">
-      <label for="fullUrl" class="sr-only"></label>
-      <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
-      <button class="btn btn-success" type="submit">Shrink It!</button>
-    </form>
-    
-    <table class="table table-striped" id="tableid">
-      <thead>
-        <tr>
-          <th scope="col" width="60%">Full URL</th>
-          <th scope="col" width="20%">Short URL</th>
-          <th scope="col" width="10%">Clicks</th>
-          <th scope="col" width="10%"><button onclick="clearcache()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
-        </tr>
-      </thead>
-      <tbody id="tbodyid">
-        <% shortUrls.forEach(shortUrl => { %>
+    </div>
+  </section>
+    <!-- Body part-->
+  <section id="body">
+    <div class="container">
+      <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <label for="fullUrl" class="sr-only"></label>
+        <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+        <button class="btn btn-success" type="submit">Shrink It!</button>
+      </form>
+      
+      <table class="table table-striped" id="tableid">
+        <thead>
           <tr>
-            <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-            <td><a id="short" href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
-            <td><%= shortUrl.clicks %></td>
-            <td><button class="btn" onclick="copylink()"><i class="fas fa-copy"></i></button></td>
+            <th scope="col" width="60%">Full URL</th>
+            <th scope="col" width="20%">Short URL</th>
+            <th scope="col" width="10%">Clicks</th>
+            <th scope="col" width="10%"><button onclick="clearcache()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
           </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody id="tbodyid">
+          <% shortUrls.forEach(shortUrl => { %>
+            <tr>
+              <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+              <td><a id="short" href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+              <td><%= shortUrl.clicks %></td>
+              <td><button class="btn" onclick="copylink()"><i class="fas fa-copy"></i></button></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section id="about">
+
+  </section>
 </body>
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
