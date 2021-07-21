@@ -28,7 +28,7 @@
 </head> 
 <body>
   <!-- Nav bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://sinno.soict.ai"><img src="/assets/SINNO.png" alt="SINNO" width="50px" height="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -41,14 +41,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"> MicroS <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#"> <img src="../assets/logo.png" alt="MicroS" width="160px" height="50px"> <span class="sr-only">(current)</span></a>
         </li> 
       </ul>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="http://sinno.soict.ai">About us</a>
+              <a class="nav-link" href="#aboutus">About Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About MicroS</a>
@@ -69,8 +69,8 @@
     <div class="container">
       <form action="/shortUrls" method="POST" class="my-4 form-inline">
         <label for="fullUrl" class="sr-only"></label>
-        <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
-        <button id="btn-shrink" class="btn btn-success" type="submit">Shrink It!</button>
+        <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control form-control-lg col mr-2">
+        <button id="btn-shrink" class="btn btn-lg btn-outline-success" type="submit">Micro It!</button>
       </form>
       
       <table class="table table-striped" id="tableid">
@@ -95,8 +95,28 @@
       </table>
     </div>
   </section>
+  <section id="aboutus">
+    <div class="row">
+      <div class="col-sm-6">  
+        <img src="../assets/SINNO-main.jpg" alt="SINNO" class="sinno-main" width="320px" height="320px">
+      </div>
+      <div class="col-sm-6" id="text-about">
+        <h3>About Us</h3>
+        <p>SoICT Innovation Club là Câu lạc bộ Sáng tạo sinh viên trực thuộc Viện Công nghệ Thông tin và Truyền thông, Trường Đại học Bách Khoa Hà Nội, được thành lập ngày 7/5/2020 với các giá trị cốt lõi nằm ở con người mang theo những đam mê và khát khao sáng tạo không giới hạn.</p>
+      </div>
+    </div>
+  </section>
   <section id="about">
-
+    <div class="row" id="row-about">
+      <div class="col-sm-6" id="text-about">
+        <h3>About MicroS</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dui ipsum, convallis eu facilisis quis, pharetra quis est.</p>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-5">  
+        <img src="../assets/logo.png" alt="MicroS" class="micros-main" width="320px" height="100px">
+      </div>
+    </div>
   </section>
 </body>
 <!-- Footer -->

@@ -1,3 +1,7 @@
+@font-face {
+    font-family: svn-apple;
+    src: url(../assets/SVN-Apple.ttf);
+}
 .clear{
     background-color:white;
     position: 0px 10px 0px 0px;
@@ -13,9 +17,26 @@
 #showcase h1{
     margin:0 50rem 0 0;
     padding: 10rem 0 0 10rem;
-    font-size:55px;
+    font-family: svn-apple;
+    font-size:80px;
 }
 #showcase p{
-    font-size:30px;
+    font-family: svn-apple;
+    font-size:55px;
     padding: 0 0 0 10rem;
+}
+#text-about{
+    text-align: center;
+}
+#text-about p{
+    padding-top: 2%;
+}
+.row{
+    padding: 2.5% 15% 0% 20%;
+}
+.micros-main{
+    align-self: center;
+}
+#row-about{
+    padding-bottom: 5%;
 }
