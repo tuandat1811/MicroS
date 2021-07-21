@@ -20,7 +20,7 @@
   <!-- end function copy to clipboard-->
   <!-- start function clear cache-->
   <script>
-    function clearcache(){
+    function clearlink(){
       $("#tbodyid").remove();
     }
   </script>
@@ -30,6 +30,10 @@
   <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://sinno.soict.ai"><img src="/assets/SINNO.png" alt="SINNO" width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://hust.edu.vn"><img src="/assets/HUST.png" alt="HUST" width="50px" height="50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,7 +54,7 @@
             <a class="nav-link" href="#about">About MicroS</a>
           </li>
       </ul>
-  </div>
+    </div>
   </nav>
   <!-- Section showcase-->
   <section id="showcase">
@@ -66,7 +70,7 @@
       <form action="/shortUrls" method="POST" class="my-4 form-inline">
         <label for="fullUrl" class="sr-only"></label>
         <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
-        <button class="btn btn-success" type="submit">Shrink It!</button>
+        <button id="btn-shrink" class="btn btn-success" type="submit">Shrink It!</button>
       </form>
       
       <table class="table table-striped" id="tableid">
@@ -75,7 +79,7 @@
             <th scope="col" width="60%">Full URL</th>
             <th scope="col" width="20%">Short URL</th>
             <th scope="col" width="10%">Clicks</th>
-            <th scope="col" width="10%"><button onclick="clearcache()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
+            <th scope="col" width="10%"><button onclick="clearlink()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
           </tr>
         </thead>
         <tbody id="tbodyid">
