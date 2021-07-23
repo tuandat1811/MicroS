@@ -15,7 +15,11 @@
   <title> MicroS | SINNO </title>
   <!-- start function copy to clipboard -->
   <script>
-
+    function copylink(){
+      var copyText= document.getElementsByClassName(short);
+      copyText.select();
+      document.execCommand("copy");
+    }
   </script>
   <!-- end function copy to clipboard-->
   <!-- start function clear cache-->
@@ -79,14 +83,14 @@
             <th scope="col" width="60%">Full URL</th>
             <th scope="col" width="20%">Short URL</th>
             <th scope="col" width="10%">Clicks</th>
-            <th scope="col" width="10%"><button onclick="clearlink()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
+            <th scope="col" wnpidth="10%"><button onclick="clearlink()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
           </tr>
         </thead>
         <tbody id="tbodyid">
           <% shortUrls.forEach(shortUrl => { %>
             <tr>
               <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-              <td><a id="short" href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+              <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
               <td><%= shortUrl.clicks %></td>
               <td><button class="btn" onclick="copylink()"><i class="fas fa-copy"></i></button></td>
             </tr>

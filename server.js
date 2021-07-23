@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-mongoose.connect('mongodb://localhost/urlShortener', {
+mongoose.connect('mongodb://tuandat:tuandat@sinno.soict.ai:27017/tuandat', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
 //include css in ejs
@@ -34,4 +34,4 @@ app.get('/:shortUrl', async (req, res) => {
   res.redirect(shortUrl.full)
 })
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 80);
