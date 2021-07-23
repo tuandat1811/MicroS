@@ -30,6 +30,7 @@
 }
 #text-about p{
     padding-top: 2%;
+    text-align: justify;
 }
 .row{
     padding: 2.5% 15% 0% 20%;
