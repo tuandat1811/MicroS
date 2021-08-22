@@ -14,20 +14,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title> MicroS | SINNO </title>
   <!-- start function copy to clipboard -->
-  <script>
-    function copylink(){
-      var copyText= document.getElementsByClassName(short);
-      copyText.select();
-      document.execCommand("copy");
-    }
-  </script>
   <!-- end function copy to clipboard-->
   <!-- start function clear cache-->
-  <script>
+  <!-- <script>
     function clearlink(){
       $("#tbodyid").remove();
     }
-  </script>
+  </script> -->
   <!-- end function clear cache-->
 </head> 
 <body>
@@ -74,25 +67,26 @@
       <form action="/shortUrls" method="POST" class="my-4 form-inline">
         <label for="fullUrl" class="sr-only"></label>
         <input required placeholder="Your URL here" type="url" name="fullUrl" id="fullUrl" class="form-control form-control-lg col mr-2">
-        <button id="btn-shrink" class="btn btn-lg btn-outline-success" type="submit">Micro It!</button>
+        <button id="btn-shrink" class="btn btn-lg btn-success" type="submit">Micro It!</button>
       </form>
       
       <table class="table table-striped" id="tableid">
         <thead>
           <tr>
-            <th scope="col" width="60%">Full URL</th>
-            <th scope="col" width="20%">Short URL</th>
+            <th scope="col" width="45%">Full URL</th>
+            <th scope="col" width="35%">Short URL</th>
             <th scope="col" width="10%">Clicks</th>
-            <th scope="col" wnpidth="10%"><button onclick="clearlink()" class="clear"><i class="fas fa-trash-alt"></i></button></th>
+            <th scope="col" width="10%"></th>
+            <!-- <th scope="col" wnpidth="10%"><button onclick="clearlink()" class="clear"><i class="fas fa-trash-alt"></i></button></th> -->
           </tr>
         </thead>
-        <tbody id="tbodyid">
+        <tbody>
           <% shortUrls.forEach(shortUrl => { %>
             <tr>
               <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-              <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+              <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td> <!-- set domain short in here-->
               <td><%= shortUrl.clicks %></td>
-              <td><button class="btn" onclick="copylink()"><i class="fas fa-copy"></i></button></td>
+              <td><button class="btn"><i class="fas fa-copy"></i></button></td>
             </tr>
           <% }) %>
         </tbody>

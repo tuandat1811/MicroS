@@ -1,21 +1,22 @@
+//import variable
 const express = require('express')
 const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
-
+//connect to SINNO Server
 mongoose.connect('mongodb://tuandat:tuandat@sinno.soict.ai:27017/tuandat', {
   useNewUrlParser: true, useUnifiedTopology: true
 })
 //include css in ejs
 app.use('/assets', express.static('assets'));
 
-
+//set view engine
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/', async (req, res) => {
   const shortUrls = await ShortUrl.find()
-  res.render('index', { shortUrls: shortUrls })
+  res.render('index.ejs', { shortUrls: shortUrls })
 })
 
 app.post('/shortUrls', async (req, res) => {
